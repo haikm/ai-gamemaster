@@ -1,0 +1,8 @@
+{
+  "turn": 1,
+  "date": "1914-08-04",
+  "summary": "War declared. Grand Fleet at Scapa Flow. High Seas Fleet at Wilhelmshaven.",
+  "british_ships": ["HMS Dreadnought", "HMS Iron Duke", "HMS Queen Elizabeth"],
+  "german_ships": ["SMS König", "SMS Grosser Kurfürst", "SMS Kronprinz"],
+  "last_event": "Britain declares war on Germany"
+}
