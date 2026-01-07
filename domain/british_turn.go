@@ -38,19 +38,25 @@ Current situation: %s
 
 Your situation: %s
 
-Your forces:
+Your forces (THESE ARE THE ONLY SHIPS YOU HAVE):
 %s
 
 Intelligence report on German forces:
 %s
 
-What are your orders? Be concise and realistic. Only reference the units and ships you have available.`,
+Give your orders for the turn. Be concise and realistic.
+
+CRITICAL RULES:
+- You can ONLY use ships and units explicitly listed above under "Your forces"
+- DO NOT mention, reference, or give orders to ANY other ships, destroyers, cruisers, or units
+- If you mention ANY ship not in your force list above, your orders will be invalid
+- There are NO reinforcements, NO other squadrons, NO additional ships available`,
 		state.Summary,
 		state.BritishSituation,
 		formatUnitsForAI(state.BritishUnits),
 		state.BritishIntelligenceReport)
 
-	britishOrder, err := b.Client.Call(ctx, "You are the British Admiral in command of the Royal Navy in WWI", englandPrompt)
+	britishOrder, err := b.Client.Call(ctx, "You are the British Admiral in command of the Royal Navy in WWI. You command ONLY the ships explicitly listed in your prompt.", englandPrompt)
 	if err != nil {
 		panic(err)
 	}

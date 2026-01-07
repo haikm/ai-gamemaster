@@ -33,6 +33,7 @@ func main() {
 		<-sigChan
 		fmt.Println("\n\nReceived interrupt signal. Exiting...")
 		cancel()
+		os.Exit(0)
 	}()
 
 	// Initialize client once

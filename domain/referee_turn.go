@@ -123,8 +123,14 @@ Resolve this turn and respond ONLY with valid JSON in this exact format:
   "new_british_intelligence_report": "What British intelligence reports about German forces (fog of war - uncertain, incomplete)"
 }
 
-Be concise and realistic. Only reference ships and units from those listed above.
-Empty arrays if no changes.
+CRITICAL RULES - MUST FOLLOW:
+1. ONLY reference ships and units explicitly listed in "German Forces" and "British Forces" above
+2. DO NOT create, mention, or reference ANY ships not in those lists (no destroyers, cruisers, or other ships unless explicitly listed)
+3. If a player's orders mention ships not in their force list, IGNORE those orders for non-existent ships
+4. Ship status updates can ONLY be for ships that exist in the force lists
+5. There are NO reinforcements, NO other ships, NO additional units available to either side
+
+Be concise and realistic. Empty arrays if no changes.
 Ship status can be: operational, damaged, heavily damaged, sunk.
 IMPORTANT: Update unit locations whenever units move. Use specific naval location names (ports, sea areas, coordinates).
 For intelligence reports: Each side should only know what they could realistically observe - uncertain enemy positions, spotted ships, reconnaissance reports with limited accuracy. They know their own forces clearly.`,
@@ -135,7 +141,7 @@ For intelligence reports: Each side should only know what they could realistical
 		formatUnits(state.BritishUnits),
 		germanOrder, britishOrder, state.Date)
 
-	result, err := r.Client.Call(ctx, "You are a realistic WWI naval wargame referee. Evaluate orders and determine outcomes based on historical naval doctrine and capabilities.", refPrompt)
+	result, err := r.Client.Call(ctx, "You are a realistic WWI naval wargame referee. Evaluate orders and determine outcomes based on historical naval doctrine and capabilities. You can ONLY reference ships that are explicitly listed in the game state - do not create or mention any ships that do not exist.", refPrompt)
 	if err != nil {
 		panic(err)
 	}
