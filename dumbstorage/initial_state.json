@@ -1,8 +1,42 @@
 {
   "turn": 1,
   "date": "1914-08-04",
-  "summary": "War declared. Grand Fleet at Scapa Flow. High Seas Fleet at Wilhelmshaven.",
-  "british_ships": ["HMS Dreadnought", "HMS Iron Duke", "HMS Queen Elizabeth"],
-  "german_ships": ["SMS König", "SMS Grosser Kurfürst", "SMS Kronprinz"],
+  "summary": "War declared.",
+  "german_situation": "1. Geschwader ready",
+  "british_situation": "First Battlesquadron ready",
+  "german_intelligence_report": "British Fleet at Scapa Flow",
+  "british_intelligence_report": "German Fleet at Wilhelmshaven",
+  "british_units": [
+    {
+      "name": "First Battlesquadron",
+      "commander": "Admiral Dingsbums",
+      "ships": [
+        { "name": "HMS Dreadnought", "type": "BB", "status": "operational" },
+        { "name": "HMS Iron Duke", "type": "BB", "status": "operational" },
+        {
+          "name": "HMS Queen Elizabeth",
+          "type": "BB",
+          "status": "operational"
+        }
+      ],
+      "location": "Scapa Flow"
+    }
+  ],
+  "german_units": [
+    {
+      "name": "Erstes Geschwader",
+      "commander": "Admiral Dingsbums",
+      "ships": [
+        { "name": "SMS König", "type": "BB", "status": "operational" },
+        {
+          "name": "SMS Grosser Kurfürst",
+          "type": "BB",
+          "status": "operational"
+        },
+        { "name": "SMS Kronprinz", "type": "BB", "status": "operational" }
+      ],
+      "location": "Wilhelmshaven"
+    }
+  ],
   "last_event": "Britain declares war on Germany"
 }
